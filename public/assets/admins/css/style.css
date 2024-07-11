@@ -1,0 +1,61 @@
+.footer{
+    background-color: #000000;
+}
+.table-hover tbody tr:hover {
+    background-color: #f2f2f2;
+}
+.btn-custom {
+    background-color: #28a745;
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #218838;
+}
+.table-wrapper {
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.ml-10{
+    margin-left: 5%;
+}
+.table-wrapper {
+    margin: 20px auto;
+    max-width: 85%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.table-title {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+}
+.table-hover tbody tr:hover {
+    background-color: #f2f2f2;
+}
+.btn-custom {
+    background-color: #28a745;
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #218838;
+}
+.action-btns a {
+    margin-right: 5px;
+}
+.table2{
+    margin-top: -800px;
+    margin-left: 280px;
+}
+
+.title-manage{
+    margin-left: 300px;
+}
+.pd{
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
