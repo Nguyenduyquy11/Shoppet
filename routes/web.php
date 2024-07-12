@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admins\Admincontroller;
+use App\Http\Controllers\Admins\SanPhamController;
 use App\Http\Controllers\Clients\ThuCungController;
 // use App\Http\Controllers\Admins\ThuCungController;
 
@@ -21,9 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Admins
-// Route::get('thu-cung/admin', ThuCungController::class)->name('thu-cung.admin');
-Route::resource('thucung/admin', Admincontroller::class);
-Route::resource('thucung/client', ThuCungController::class);
+// Route::get('thucung/admin', ThuCungController::class)->name('thucung.admin');
+Route::resource('admin', Admincontroller::class);
 //Clients
-// Route::resource('thu-cung', ThuCungController::class);
+Route::resource('thucung', ThuCungController::class);
 
