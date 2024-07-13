@@ -2,8 +2,11 @@
 @section('list')
 <div class="table-wrapper table2 " >
         <div class="table-title bg-primary text-white p-3">
+            
             <h4 class="mb-0">Danh Sách Thú Cưng</h4>
+            
         </div>
+        <a href="#" class="btn btn-success ml-10 mt-3 mb-3">Thêm mới</a>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -40,6 +43,7 @@
                 @endforeach
             </tbody>
         </table>
+        
     </div>
-    <a href="#" class="btn btn-success ml-10 mb-3">Thêm mới</a>
+    
 @endsection
