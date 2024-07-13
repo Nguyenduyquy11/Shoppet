@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admins\Admincontroller;
 use App\Http\Controllers\Admins\SanPhamController;
-use App\Http\Controllers\Clients\ThuCungController;
+use App\Http\Controllers\Clients\ClientController;
 // use App\Http\Controllers\Admins\ThuCungController;
 
 
@@ -23,7 +23,8 @@ Route::get('/', function () {
 });
 //Admins
 // Route::get('thucung/admin', ThuCungController::class)->name('thucung.admin');
-Route::resource('admin', Admincontroller::class);
+
+Route::resource('test', Admincontroller::class);
 //Clients
-Route::resource('thucung', ThuCungController::class);
+Route::resource('thucung', ClientController::class);
 

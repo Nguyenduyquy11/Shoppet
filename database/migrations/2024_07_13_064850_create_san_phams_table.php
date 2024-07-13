@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('san_phams', function (Blueprint $table) {
             $table->id();
             $table->string('ten_san_pham', 255);
+            $table->string('hinh_anh', 255);
             $table->integer('so_luong');
-            $table->double('gia_san_pham', 13,2);
+            $table->double('gia_san_pham', 13, 2);
             $table->double('gia_khuyen_mai', 13, 2);
             $table->date('ngay_nhap');
             $table->text('mo_ta');
             $table->unsignedBigInteger('danh_muc_id');
-            // $table->foreign('danh_muc_id')->references('id')->on('danh_mucs')->onDelete('cascade');
+            $table->foreign('danh_muc_id')->references('id')->on('danh_mucs')->onDelete('cascade');
             $table->timestamps();
         });
     }

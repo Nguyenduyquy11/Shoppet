@@ -13,6 +13,7 @@ class ClientController extends Controller
     public function index()
     {
         //
+        return view('clients.thucung.index');
     }
 
     /**

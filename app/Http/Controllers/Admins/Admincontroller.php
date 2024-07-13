@@ -15,6 +15,7 @@ class Admincontroller extends Controller
     {
         $listThuCung = AdminModel::get();
         return view('admins.thucung.index', ['listThuCung' => $listThuCung]);
+        
     }
 
     /**
