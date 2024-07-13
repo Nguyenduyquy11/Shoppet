@@ -23,7 +23,8 @@ Route::get('/', function () {
 });
 //Admins
 // Route::get('thucung/admin', ThuCungController::class)->name('thucung.admin');
-Route::resource('admin', Admincontroller::class);
+
+Route::resource('test', Admincontroller::class);
 //Clients
 Route::resource('thucung', ClientController::class);
 
