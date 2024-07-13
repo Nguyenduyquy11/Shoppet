@@ -20,6 +20,7 @@ return new class extends Migration
             $table->double('gia_khuyen_mai', 13, 2);
             $table->date('ngay_nhap');
             $table->text('mo_ta');
+            $table->integer('gioi_tinh');
             $table->unsignedBigInteger('danh_muc_id');
             $table->foreign('danh_muc_id')->references('id')->on('danh_mucs')->onDelete('cascade');
             $table->timestamps();
