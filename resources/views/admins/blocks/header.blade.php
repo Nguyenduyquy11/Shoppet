@@ -189,7 +189,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="admin/danhmuc" class="nav-link">
+                <a href="danhmuc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>danh muc</p>
                 </a>

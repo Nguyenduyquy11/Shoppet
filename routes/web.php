@@ -28,5 +28,5 @@ Route::get('/', function () {
 Route::resource('admin', Admincontroller::class);
 //Clients
 Route::resource('thucung', ClientController::class);
-Route::resource('admin/danhmuc', DanhMucController::class);
+Route::resource('danhmuc', DanhMucController::class);
 
