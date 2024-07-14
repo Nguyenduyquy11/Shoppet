@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <title>@yield('title')</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="{{ asset('assets/admins/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admins/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admins/plugins/fontawesome-free/css/all.min.css') }}">
@@ -28,13 +29,18 @@
 
     @include('admins.blocks.header')
 
+    <div class="content-wrapper">
+        @yield('content')
+    </div>
 
-    @yield('list')
 
 
-    @include('admins.blocks.footer')
 
 
 </body>
+
+<footer>
+    @include('admins.blocks.footer')
+</footer>
 
 </html>
