@@ -53,8 +53,10 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Danh mục</label>
                         <select name="danh_muc_id"  class="form-control">
-                            <option value="0">Chó</option>
-                            <option value="1">Mèo</option>
+                            <option>Danh mục thú cưng </option>
+                            @foreach ($listDanhMuc as $item)
+                                <option value="{{ $item->id }}">{{ $item->ten_danh_muc }}</option>
+                            @endforeach                    
                         </select>
                     </div>
                 </div>

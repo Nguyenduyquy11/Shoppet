@@ -32,6 +32,6 @@ Route::get('/', function () {
 // Route::resource('admin/sanpham', SanPhamController::class);
 //Clients
 
-Route::resource('admin/danhmuc', DanhMucController::class);
+Route::resource('admindanhmuc', DanhMucController::class);
 Route::resource('adminsanpham', SanPhamController::class);
 Route::resource('thucung', ClientController::class);

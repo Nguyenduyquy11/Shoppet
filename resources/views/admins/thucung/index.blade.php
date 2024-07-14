@@ -4,6 +4,11 @@
     {{$title}}
 @endsection
 @section('content')
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         <div class="table-title bg-primary text-white p-3">
             <h4 class="mb-0">Danh Sách Thú Cưng</h4>
         </div>
@@ -20,8 +25,7 @@
                     <th>Ngày đăng</th>
                     <th>Giới tính</th>
                     <th>Mô Tả</th>
-                    <th>giới tính</th>
-                    <th>giống loài</th>
+                    <th>Giống loài</th>
                     <th>Thao tác</th>
                 </tr>
             </thead>
@@ -35,8 +39,8 @@
                         <td>{{ $thuCung->gia_san_pham }}</td>
                         <td>{{ $thuCung->gia_khuyen_mai }}</td>
                         <td>{{ $thuCung->ngay_nhap }}</td>
+                        <td>{{ $thuCung->gioi_tinh == 0 ? 'Đực' : 'Cái' }}</td>
                         <td>{{ $thuCung->mo_ta }}</td>
-                        <td>{{ $thuCung->gioi_tinh }}</td>
                         <td>{{ $thuCung->danh_muc_id }}</td>
                         <td>
                             <a href="#" class="btn btn-warning btn-sm">Sửa</a>

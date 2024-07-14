@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admins\DanhMuc;
 use App\Models\Admins\SanPham;
 use Illuminate\Http\Request;
 
@@ -13,13 +14,16 @@ class SanPhamController extends Controller
      */
 
     public $thu_cung;
+    protected $danh_muc;
 
     public function __construct() {
         $this->thu_cung = new SanPham();
+        $this->danh_muc = new DanhMuc();
     }
 
     public function index()
     {
+        
         $listThuCung = $this->thu_cung->getListThuCung();
         $title = "Danh dách thú cưng";
         return view('admins.thucung.index', ['listThuCung' => $listThuCung, 'title' => $title]);
@@ -30,8 +34,9 @@ class SanPhamController extends Controller
      */
     public function create()
     {
+        $listDanhMuc = $this->danh_muc->getListDM();
         $title = "Thêm Thú Cưng";
-        return view('admins.thucung.create', compact('title'));
+        return view('admins.thucung.create', ['listDanhMuc' => $listDanhMuc, 'title' => $title]);
     }
 
     /**

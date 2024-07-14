@@ -31,6 +31,7 @@
 
     <div class="content-wrapper">
         @yield('content')
+        @yield('listDM')
     </div>
 
 

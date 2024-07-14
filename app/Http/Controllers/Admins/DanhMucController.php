@@ -3,17 +3,23 @@
 namespace App\Http\Controllers\admins;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admins\DanhMuc;
 use Illuminate\Http\Request;
 
 class DanhMucController extends Controller
 {
+    protected $danh_muc;
+    public function __construct()
+    {
+        $this->danh_muc = new DanhMuc();
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-        return view('admins.danhmuc.index');
+        $title = "Danh sách danh mục";
+        return view('admins.danhmuc.index', ['title' => $title]);
     }
 
     /**
@@ -21,7 +27,8 @@ class DanhMucController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Thêm mới danh mục";
+        return view('admins.danhmuc.create', ['title' => $title]);
     }
 
     /**
@@ -29,7 +36,11 @@ class DanhMucController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request -> isMethod('POST')){
+            $params = $request -> except('_token');
+            $this->danh_muc->CreateDanhMuc($params);
+        }
+        return redirect()->route('admindanhmuc.index')->with('success', 'Thêm mới danh mục thành công!');
     }
 
     /**
