@@ -13,8 +13,8 @@ class Admincontroller extends Controller
      */
     public function index()
     {
-        $listThuCung = AdminModel::get();
-        return view('admins.thucung.index', ['listThuCung' => $listThuCung]);
+        // $listThuCung = AdminModel::get();
+        // return view('admins.thucung.index', ['listThuCung' => $listThuCung]);
         
     }
 
