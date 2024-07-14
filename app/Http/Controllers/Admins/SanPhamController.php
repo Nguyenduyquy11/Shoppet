@@ -44,8 +44,14 @@ class SanPhamController extends Controller
      */
     public function store(Request $request)
     {
+        if($request ->hasFile('hinh_anh')){
+            $fileName = $request->file('hinh_anh')->store('uploads/sanpham', 'public');
+        } else{
+            $fileName = null;
+        }
         if ($request -> isMethod('POST')) {
             $params = $request -> except('_token');
+            $params['hinh_anh'] = $fileName;
             $this->thu_cung->createThuCung($params);
         }
         return redirect()->route('adminsanpham.index')->with('success', 'Thêm sản phẩm thành công!');

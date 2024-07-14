@@ -23,17 +23,17 @@
                 </tr>
             </thead>
             <tbody>
-                
+                @foreach ($listDanhMuc as $index => $item)
                     <tr>
-                        <td>qd</td>
-                        <td>ddaq</td>
-                        <td>qd</td>
+                        <td>{{ $index +1 }}</td>
+                        <td>{{ $item->ten_danh_muc }}</td>
+                        <td>{{ $item->mo_ta }}</td>
                         <td>
                             <a href="#" class="btn btn-warning btn-sm">Sửa</a>
                             <a href="#" class="btn btn-danger btn-sm">Xóa</a>
                         </td>
                     </tr>
-                
+                @endforeach
             </tbody>
         </table>
 

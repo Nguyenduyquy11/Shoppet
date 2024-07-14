@@ -9,43 +9,43 @@
             <div class="card-header">
                 <h3 class="card-title">Thêm Thú Cưng</h3>
             </div>
-            <form action="{{ route('adminsanpham.store') }}" method="POST">
+            <form action="{{ route('adminsanpham.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên thú cưng</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name"
+                        <input type="text" class="form-control"  placeholder="Enter name"
                             name="ten_san_pham">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Hình ảnh</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Image"
+                        <input type="file" class="form-control"  placeholder="Image"
                             name="hinh_anh">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Số lượng</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="số lượng"
+                        <input type="number" class="form-control"  placeholder="số lượng"
                             name="so_luong" min="0">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giá sản phẩm</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" name="gia_san_pham">
+                        <input type="number" class="form-control"  name="gia_san_pham">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giá khuyến mãi</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" name="gia_khuyen_mai">
+                        <input type="number" class="form-control"  name="gia_khuyen_mai">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Ngày nhập</label>
-                        <input type="date" class="form-control" id="exampleInputPassword1" name="ngay_nhap">
+                        <input type="date" class="form-control"  name="ngay_nhap">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả</label>
-                        <textarea name="mo_ta" id="exampleInputPassword1" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="mo_ta"  class="form-control" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giới tính</label>
-                        <select name="gioi_tinh" id="" class="form-control">
+                        <select name="gioi_tinh"  class="form-control">
                             <option value="0">Đực</option>
                             <option value="1">Cái</option>
                         </select>

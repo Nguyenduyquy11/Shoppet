@@ -34,14 +34,16 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $thuCung->ten_san_pham }}</td>
-                        <td>{{ $thuCung->hinh_anh }}</td>
+                        <td>
+                            <img src="{{ Storage::url($thuCung->hinh_anh) }}" width="100px" height="100px" alt="">
+                        </td>
                         <td>{{ $thuCung->so_luong }}</td>
-                        <td>{{ $thuCung->gia_san_pham }}</td>
-                        <td>{{ $thuCung->gia_khuyen_mai }}</td>
+                        <td>{{ $thuCung->gia_san_pham }} VNĐ</td>
+                        <td>{{ $thuCung->gia_khuyen_mai }} VNĐ</td>
                         <td>{{ $thuCung->ngay_nhap }}</td>
                         <td>{{ $thuCung->gioi_tinh == 0 ? 'Đực' : 'Cái' }}</td>
                         <td>{{ $thuCung->mo_ta }}</td>
-                        <td>{{ $thuCung->danh_muc_id }}</td>
+                        <td>{{ $thuCung->ten_danh_muc }}</td>
                         <td>
                             <a href="#" class="btn btn-warning btn-sm">Sửa</a>
                             <a href="#" class="btn btn-danger btn-sm">Xóa</a>

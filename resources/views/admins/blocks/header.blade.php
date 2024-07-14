@@ -185,13 +185,13 @@
               <li class="nav-item">
                 <a href="/adminsanpham" class="nav-link ">         
                   <i class="far fa-circle nav-icon"></i>
-                  <p>sản phẩm</p>
+                  <p>Sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="admindanhmuc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>danh muc</p>
+                  <p>Danh mục</p>
                 </a>
               </li>
               <li class="nav-item">

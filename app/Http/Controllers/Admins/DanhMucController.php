@@ -18,8 +18,9 @@ class DanhMucController extends Controller
      */
     public function index()
     {
+        $listDanhMuc = $this->danh_muc->getListDM();
         $title = "Danh sách danh mục";
-        return view('admins.danhmuc.index', ['title' => $title]);
+        return view('admins.danhmuc.index', ['title' => $title, 'listDanhMuc' => $listDanhMuc]);
     }
 
     /**
