@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('dia_chi');
             $table->date('ngay_sinh');
             $table->string('mat_khau', 100);
-            $table->unsignedBigInteger('chuc_vu_id');
+            $table->unsignedBigInteger('chuc_vu_id')->nullable();
             $table->foreign('chuc_vu_id')->references('id')->on('chuc_vus')->onDelete('cascade');
             $table->boolean('status')->default(0);
             $table->timestamps();

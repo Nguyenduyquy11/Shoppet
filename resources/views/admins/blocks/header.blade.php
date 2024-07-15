@@ -141,7 +141,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('assets/admins/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Admin</span>
     </a>
 
     <!-- Sidebar -->
@@ -152,7 +152,7 @@
           <img src="{{ asset('assets/admins/img/user3-128x128.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Bộ Ba Tam Tấu</a>
         </div>
       </div>
 
@@ -177,7 +177,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Danh sách
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -189,15 +189,21 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="admindanhmuc" class="nav-link">
+                <a href="/admindanhmuc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="/admintaikhoan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Tài khoản</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/adminchucvu" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chức vụ</p>
                 </a>
               </li>
             </ul>
@@ -214,5 +220,5 @@
 
 
   <br>
-  <h2 class="title-manage pd">Quản Lí Thú Cưng</h2>
+  <h2 class="title-manage pd">Quản Lí Admin</h2>
   <hr>
