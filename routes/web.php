@@ -20,7 +20,7 @@ use App\Http\Controllers\Clients\ClientController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('clients.thucung.index');
 });
 //Admins
 // Route::get('thucung/admin', ThuCungController::class)->name('thucung.admin');

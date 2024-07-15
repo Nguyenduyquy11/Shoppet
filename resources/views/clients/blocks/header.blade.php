@@ -1,7 +1,7 @@
 
-<nav class=" navbar navbar-expand-lg bg-danger font-sans-serif">
+<nav class=" navbar navbar-expand-lg bg-warning font-sans-serif">
     <div class="container-xxl">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="#"><img src="{{ asset('assets/clients/img/logo-thu-cung.png') }}" width="60px" height="60px" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
