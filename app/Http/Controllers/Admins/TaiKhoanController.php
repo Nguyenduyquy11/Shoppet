@@ -49,7 +49,7 @@ class TaiKhoanController extends Controller
             $params['anh_dai_dien'] = $fileName;
             $this->tai_khoan->createTaiKhoan($params);
         }
-        return redirect()->route('admintaikhoan.index')->with('success', 'Thêm tài khoản thành công');
+        return redirect()->route('admin_taikhoan.index')->with('success', 'Thêm tài khoản thành công');
     }
 
     /**

@@ -10,15 +10,22 @@ class SanPham extends Model
 {
     use HasFactory;
 
-     public function getListThuCung () {
+    public function getListThuCung()
+    {
         $getlist = DB::table('san_phams')
-        ->join('danh_mucs', 'san_phams.danh_muc_id', '=' , 'danh_mucs.id')
-        ->select('san_phams.*' , 'danh_mucs.ten_danh_muc')
-        ->get();
+            ->join('danh_mucs', 'san_phams.danh_muc_id', '=', 'danh_mucs.id')
+            ->select('san_phams.*', 'danh_mucs.ten_danh_muc')
+            ->get();
         return $getlist;
     }
 
-    public function createThuCung($data) {
+    public function createThuCung($data)
+    {
         DB::table('san_phams')->insert($data);
+    }
+
+    public function getDetailThuCung($id) {
+        $thuCung = DB::table('san_phams')->WHERE('id', $id)->first();
+        return $thuCung;
     }
 }

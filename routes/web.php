@@ -28,9 +28,9 @@ Route::get('/', function () {
 // Route::get('thucung/admin', ThuCungController::class)->name('thucung.admin');
 // Route::resource('admin', Admincontroller::class);
 // Route::resource('admin/sanpham', SanPhamController::class);
-Route::resource('admindanhmuc', DanhMucController::class);
-Route::resource('adminsanpham', SanPhamController::class);
-Route::resource('admintaikhoan', TaiKhoanController::class);
-Route::resource('adminchucvu', ChucVuController::class);
+Route::resource('admin_danhmuc', DanhMucController::class);
+Route::resource('admin_sanpham', SanPhamController::class);
+Route::resource('admin_taikhoan', TaiKhoanController::class);
+Route::resource('admin_chucvu', ChucVuController::class);
 //Clients
 Route::resource('thucung', ClientController::class);

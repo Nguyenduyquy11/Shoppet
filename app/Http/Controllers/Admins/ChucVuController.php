@@ -42,7 +42,7 @@ class ChucVuController extends Controller
             $params = $request->except('_token');
             $this->chuc_vu->createChucVu($params);
         }
-        return redirect()->route('adminchucvu.index')->with('success', 'Thêm mới chức vụ thành công!');
+        return redirect()->route('admin_chucvu.index')->with('success', 'Thêm mới chức vụ thành công!');
     }
 
     /**

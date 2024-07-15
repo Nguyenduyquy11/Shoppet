@@ -41,7 +41,7 @@ class DanhMucController extends Controller
             $params = $request -> except('_token');
             $this->danh_muc->CreateDanhMuc($params);
         }
-        return redirect()->route('admindanhmuc.index')->with('success', 'Thêm mới danh mục thành công!');
+        return redirect()->route('admin_danhmuc.index')->with('success', 'Thêm mới danh mục thành công!');
     }
 
     /**
@@ -57,7 +57,10 @@ class DanhMucController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $title = "Sửa Danh Mục Thú Cưng";
+        $danhMuc = $this->danh_muc->getDetailDanhMuc($id);
+
+        return view('admins.danhmuc.update', ['title' => $title, 'danhMuc' => $danhMuc]);
     }
 
     /**

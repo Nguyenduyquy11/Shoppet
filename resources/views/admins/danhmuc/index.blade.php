@@ -12,7 +12,7 @@
         <div class="table-title bg-primary text-white p-3">
             <h4 class="mb-0">Danh Sách Danh Mục</h4>
         </div>
-        <a href="{{ route('admindanhmuc.create') }}" class="btn btn-success ml-10 mt-3 mb-3">Thêm mới</a>
+        <a href="{{ route('admin_danhmuc.create') }}" class="btn btn-success ml-10 mt-3 mb-3">Thêm mới</a>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -29,7 +29,7 @@
                         <td>{{ $item->ten_danh_muc }}</td>
                         <td>{{ $item->mo_ta }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-sm">Sửa</a>
+                            <a href="{{ route('admin_danhmuc.edit', $item->id) }}" class="btn btn-warning btn-sm">Sửa</a>
                             <a href="#" class="btn btn-danger btn-sm">Xóa</a>
                         </td>
                     </tr>

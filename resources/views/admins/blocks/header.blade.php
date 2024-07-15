@@ -183,25 +183,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/adminsanpham" class="nav-link ">         
+                <a href="/admin_sanpham" class="nav-link ">         
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admindanhmuc" class="nav-link">
+                <a href="/admin_danhmuc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admintaikhoan" class="nav-link">
+                <a href="/admin_taikhoan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tài khoản</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/adminchucvu" class="nav-link">
+                <a href="/admin_chucvu" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Chức vụ</p>
                 </a>

@@ -16,14 +16,15 @@ class SanPhamController extends Controller
     public $thu_cung;
     protected $danh_muc;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->thu_cung = new SanPham();
         $this->danh_muc = new DanhMuc();
     }
 
     public function index()
     {
-        
+
         $listThuCung = $this->thu_cung->getListThuCung();
         $title = "Danh dách thú cưng";
         return view('admins.thucung.index', ['listThuCung' => $listThuCung, 'title' => $title]);
@@ -44,17 +45,17 @@ class SanPhamController extends Controller
      */
     public function store(Request $request)
     {
-        if($request ->hasFile('hinh_anh')){
+        if ($request->hasFile('hinh_anh')) {
             $fileName = $request->file('hinh_anh')->store('uploads/sanpham', 'public');
-        } else{
+        } else {
             $fileName = null;
         }
-        if ($request -> isMethod('POST')) {
-            $params = $request -> except('_token');
+        if ($request->isMethod('POST')) {
+            $params = $request->except('_token');
             $params['hinh_anh'] = $fileName;
             $this->thu_cung->createThuCung($params);
         }
-        return redirect()->route('adminsanpham.index')->with('success', 'Thêm sản phẩm thành công!');
+        return redirect()->route('admin_sanpham.index')->with('success', 'Thêm sản phẩm thành công!');
     }
 
     /**
@@ -70,7 +71,11 @@ class SanPhamController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $title = "Sửa Thông Tin Thú Cưng";
+        $listDanhMuc = $this->danh_muc->getListDM();
+        $thuCung = $this->thu_cung->getDetailThuCung($id);
+        // dd($thuCung);
+        return view('admins.thucung.update', ['thuCung' => $thuCung, 'title' => $title, 'listDanhMuc' => $listDanhMuc]);
     }
 
     /**
