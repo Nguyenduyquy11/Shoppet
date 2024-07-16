@@ -36,8 +36,8 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giới tính</label>
                         <select name="gioi_tinh" id="" class="form-control" >
-                            <option value="0">Nam</option>
-                            <option value="1">Nữ</option>
+                            <option value="0" {{ $deTailTaiKhoan->gioi_tinh == 0 ? 'selected' : '' }}>Nam</option>
+                            <option value="1" {{ $deTailTaiKhoan->gioi_tinh == 1 ? 'selected' : '' }}>Nữ</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -52,12 +52,19 @@
                         <label for="exampleInputPassword1">Ngày sinh</label>
                         <input type="date" class="form-control"  name="ngay_sinh" value="{{ $deTailTaiKhoan->ngay_sinh }}">
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Chức vụ</label>
+                        <select name="gioi_tinh"  class="form-control">
+                            <option value="1" {{ $deTailTaiKhoan->chuc_vu_id == 1 ? 'selected' : '' }}>Khách hàng</option>
+                            <option value="2" {{ $deTailTaiKhoan->chuc_vu_id == 2 ? 'selected' : '' }}>Quản lý</option>
+                            <option value="2" {{ $deTailTaiKhoan->chuc_vu_id == 3 ? 'selected' : '' }}>Nhân viên</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Trạng thái</label>
                         <select name="gioi_tinh"  class="form-control">
-                            <option value="0">Đang hoạt động</option>
-                            <option value="1">Không hoạt động</option>
+                            <option value="0" {{ $deTailTaiKhoan->status == 0 ? 'selected' : '' }}>Đang hoạt động</option>
+                            <option value="1" {{ $deTailTaiKhoan->status == 1 ? 'selected' : '' }}>Không hoạt động</option>
                         </select>
                     </div>
                 </div>

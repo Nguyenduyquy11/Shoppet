@@ -54,7 +54,7 @@
                     
                     <div class="form-group">
                         <label for="exampleInputPassword1">Trạng thái</label>
-                        <select name="gioi_tinh"  class="form-control">
+                        <select name="status"  class="form-control">
                             <option value="0">Đang hoạt động</option>
                             <option value="1">Không hoạt động</option>
                         </select>

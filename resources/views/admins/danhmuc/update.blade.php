@@ -20,7 +20,6 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả</label>
                         <textarea name="mo_ta" id="exampleInputEmail1" class="form-control" cols="30" rows="10">{{$danhMuc->mo_ta}}</textarea>
-                            >
                     </div>
                 </div>
                 <div class="card-footer text-center">

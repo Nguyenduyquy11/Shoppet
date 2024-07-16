@@ -21,8 +21,10 @@ use App\Http\Controllers\Clients\ClientController;
 |
 */
 
-Route::get('/', function () {
-    return view('clients.thucung.index');
+Route::get('admin', function () {
+    $title = 'Trang admin';
+
+    return view('layouts.admin', ['title' => $title]);
 });
 //Admins
 // Route::get('thucung/admin', ThuCungController::class)->name('thucung.admin');
@@ -33,4 +35,8 @@ Route::resource('admin_sanpham', SanPhamController::class);
 Route::resource('admin_taikhoan', TaiKhoanController::class);
 Route::resource('admin_chucvu', ChucVuController::class);
 //Clients
+Route::get('/', function () {
+    return view('clients.thucung.index');
+});
 Route::resource('thucung', ClientController::class);
+
