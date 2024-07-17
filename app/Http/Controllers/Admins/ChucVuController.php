@@ -68,7 +68,11 @@ class ChucVuController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if($request->isMethod('PUT')){
+            $params = $request->except('_token', '_method');
+            $this->chuc_vu->updateChucVu($id, $params);
+            return redirect()->route('admin_chucvu.index')->with('success', 'Chỉnh sửa chức vụ thành công!');
+        }
     }
 
     /**
@@ -76,6 +80,8 @@ class ChucVuController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $chucvu = $this->chuc_vu->getDetailChucVu($id);
+        $this->chuc_vu->deleteChucVu($chucvu->id);
+        return redirect()->route('admin_chucvu.index')->with('success', 'Xóa chức vụ thành công!');
     }
 }

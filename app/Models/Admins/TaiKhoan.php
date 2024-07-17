@@ -23,4 +23,7 @@ class TaiKhoan extends Model
         $deTailTaiKhoan = DB::table('tai_khoans')->where('id', $id)->first();
         return $deTailTaiKhoan;
     }
+    public function deleteTaiKhoan ($id){
+        DB::table('tai_khoans')->where('id', $id)->delete();
+    }
 }

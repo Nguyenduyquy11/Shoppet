@@ -30,7 +30,13 @@
                         <td>{{ $item->mo_ta }}</td>
                         <td>
                             <a href="{{ route('admin_danhmuc.edit', $item->id) }}" class="btn btn-warning btn-sm">Sửa</a>
-                            <a href="#" class="btn btn-danger btn-sm">Xóa</a>
+                            <form action="{{ route('admin_danhmuc.destroy', $item->id) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <br><button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không?')">
+                                    Xóa
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

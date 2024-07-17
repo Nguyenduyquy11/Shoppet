@@ -83,6 +83,8 @@ class TaiKhoanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $taikhoan = $this->tai_khoan->getDetailTaiKhoan($id);
+        $this->tai_khoan->deleteTaiKhoan($taikhoan->id);
+        return redirect()->route('admin_taikhoan.index')->with('success', 'Xóa tài khoản thành công');
     }
 }

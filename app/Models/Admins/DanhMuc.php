@@ -24,4 +24,11 @@ class DanhMuc extends Model
         $danhMuc = DB::table('danh_mucs')->WHERE('id', $id)->first();
         return $danhMuc;
     }
+    public function updateDanhMuc($id, $params){
+        DB::table('danh_mucs')->where('id', $id)->update($params);
+    }
+    public function deleteDanhMuc($id)
+    {
+        DB::table('danh_mucs')->where('id', $id)->delete();
+    }
 }

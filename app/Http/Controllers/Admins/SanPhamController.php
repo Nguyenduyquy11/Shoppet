@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admins\DanhMuc;
 use App\Models\Admins\SanPham;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SanPhamController extends Controller
 {
@@ -83,7 +84,20 @@ class SanPhamController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if($request->isMethod('PUT')){
+            $params = $request->except('_token', '_method');
+            $sanpham = $this->thu_cung->getDetailThuCung($id);
+            if($request->hasFile('hinh_anh')){
+                if($sanpham->hinh_anh){
+                    Storage::disk('public')->delete($sanpham->hinh_anh);
+                }
+                $params['hinh_anh'] = $request->file('hinh_anh')->store('uploads/sanpham', 'public');
+            } else {
+                $params['hinh_anh'] = $sanpham->hinh_anh;
+            }
+            $this->thu_cung->updateThuCung($id,$params);
+            return redirect()->route('admin_sanpham.index')->with('success', 'Sửa sản phẩm thành công!');
+        }
     }
 
     /**
@@ -91,6 +105,8 @@ class SanPhamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $thucung = $this->thu_cung->getDetailThuCung($id);
+        $this->thu_cung->deleteThuCung($thucung->id);
+        return redirect()->route('admin_sanpham.index')->with('success', 'Xóa sản phẩm thành công!');
     }
 }

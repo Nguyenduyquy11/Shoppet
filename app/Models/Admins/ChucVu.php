@@ -20,5 +20,11 @@ class ChucVu extends Model
         $detailChucVu = DB::table('chuc_vus')->where('id', $id)->first();
         return $detailChucVu;
     }
+    public function updateChucVu($id, $params){
+        DB::table('chuc_vus')->where('id', $id)->update($params);
+    }
+    public function deleteChucVu($id){
+        DB::table('chuc_vus')->where('id', $id)->delete();
+    }
     
 }

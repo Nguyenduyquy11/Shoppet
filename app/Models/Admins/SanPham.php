@@ -28,4 +28,12 @@ class SanPham extends Model
         $thuCung = DB::table('san_phams')->WHERE('id', $id)->first();
         return $thuCung;
     }
+    public function updateThuCung($id, $params)
+    {
+        DB::table('san_phams')->where('id', $id)->update($params);
+    }
+    public function deleteThuCung($id,)
+    {
+        DB::table('san_phams')->where('id', $id)->delete();
+    }
 }
