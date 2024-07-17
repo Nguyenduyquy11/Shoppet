@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\Http\Controllers\Controller;
-use App\Models\Admins\ChucVu;
 use Illuminate\Http\Request;
+use App\Models\Admins\ChucVu;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ChucVuRequest;
 
 class ChucVuController extends Controller
 {
@@ -36,7 +37,7 @@ class ChucVuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ChucVuRequest $request)
     {
         if($request->isMethod('POST')){
             $params = $request->except('_token');
@@ -66,7 +67,7 @@ class ChucVuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ChucVuRequest $request, string $id)
     {
         if($request->isMethod('PUT')){
             $params = $request->except('_token', '_method');

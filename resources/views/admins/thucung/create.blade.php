@@ -14,31 +14,52 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên thú cưng</label>
-                        <input type="text" class="form-control" placeholder="Enter name" name="ten_san_pham">
+                        <input type="text" class="form-control @error('ten_san_pham') is-invalid @enderror"
+                            value="{{ old('ten_san_pham') }}" placeholder="Enter name" name="ten_san_pham">
+                        @error('ten_san_pham')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Hình ảnh</label>
-                        <input type="file" class="form-control" placeholder="Image" name="hinh_anh">
+                        <input type="file" class="form-control" placeholder="Image" name="hinh_anh"
+                            value="{{ old('hinh_anh') }}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Số lượng</label>
-                        <input type="number" class="form-control" placeholder="số lượng" name="so_luong" min="0">
+                        <input type="number" class="form-control @error('so_luong') is-invalid @enderror"
+                            value="{{ old('so_luong') }}" placeholder="số lượng" name="so_luong" min="0">
+                        @error('so_luong')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giá sản phẩm</label>
-                        <input type="number" class="form-control" name="gia_san_pham">
+                        <input type="number" class="form-control @error('gia_san_pham') is-invalid @enderror"
+                            value="{{ old('gia_san_pham') }}" name="gia_san_pham">
+                        @error('gia_san_pham')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giá khuyến mãi</label>
-                        <input type="number" class="form-control" name="gia_khuyen_mai">
+                        <input type="number" class="form-control @error('gia_khuyen_mai') is-invalid @enderror"
+                            value="{{ old('gia_khuyen_mai') }}" name="gia_khuyen_mai">
+                        @error('gia_khuyen_mai')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Ngày nhập</label>
-                        <input type="date" class="form-control" name="ngay_nhap">
+                        <input type="date" class="form-control @error('ngay_nhap') is-invalid @enderror"
+                            value="{{ old('ngay_nhap') }}" name="ngay_nhap">
+                        @error('ngay_nhap')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả</label>
-                        <textarea name="mo_ta" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="mo_ta" class="form-control" cols="30" rows="10">{{ old('mo_ta') }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Giới tính</label>
@@ -49,12 +70,15 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Danh mục</label>
-                        <select name="danh_muc_id" class="form-control">
+                        <select name="danh_muc_id"class="form-control @error('danh_muc_id') is-invalid @enderror">
                             <option>Danh mục thú cưng </option>
                             @foreach ($listDanhMuc as $item)
                                 <option value="{{ $item->id }}">{{ $item->ten_danh_muc }}</option>
                             @endforeach
                         </select>
+                        @error('danh_muc_id')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="card-footer text-center">

@@ -65,9 +65,7 @@ class TaiKhoanController extends Controller
      */
     public function edit(string $id)
     {
-        $deTailTaiKhoan = $this->tai_khoan->getDetailTaiKhoan($id);
-        $title = "Chỉnh sửa tài khoản";
-        return view('admins.taikhoan.update', ['title' => $title, 'deTailTaiKhoan' => $deTailTaiKhoan]);
+        //
     }
 
     /**

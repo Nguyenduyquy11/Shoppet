@@ -14,13 +14,16 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên danh mục thú cưng</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name"
-                            name="ten_danh_muc">
+                        <input type="text" class="form-control @error('ten_danh_muc') is-invalid @enderror"
+                            id="exampleInputEmail1" placeholder="Enter name" name="ten_danh_muc"
+                            value="{{ old('ten_danh_muc') }}">
+                        @error('ten_danh_muc')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả </label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Image"
-                            name="mo_ta">
+                        <textarea name="mo_ta" class="form-control" id="exampleInputPassword1" cols="30" rows="10">{{ old('mo_ta') }}</textarea>
                     </div>
                 </div>
                 <div class="card-footer text-center">

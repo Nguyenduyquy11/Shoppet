@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Admins\DanhMuc;
 use App\Models\Admins\SanPham;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\SanPhamReQuest;
 use Illuminate\Support\Facades\Storage;
 
 class SanPhamController extends Controller
@@ -44,7 +45,7 @@ class SanPhamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SanPhamReQuest $request)
     {
         if ($request->hasFile('hinh_anh')) {
             $fileName = $request->file('hinh_anh')->store('uploads/sanpham', 'public');
@@ -82,7 +83,7 @@ class SanPhamController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(SanPhamReQuest $request, string $id)
     {
         if($request->isMethod('PUT')){
             $params = $request->except('_token', '_method');

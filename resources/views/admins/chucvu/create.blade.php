@@ -14,8 +14,11 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên chức vụ</label>
-                        <input type="text" class="form-control" 
-                            name="ten_chuc_vu">
+                        <input type="text" class="form-control @error('ten_chuc_vu') is-invalid @enderror"
+                            name="ten_chuc_vu" value="{{ old('ten_chuc_vu')}}">
+                        @error('ten_chuc_vu')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="card-footer text-center">

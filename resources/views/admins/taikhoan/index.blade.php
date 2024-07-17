@@ -46,7 +46,6 @@
                     <td>{{ $item->ten_chuc_vu }}</td>
                     <td>{{ $item->status == 0 ? 'Đang hoạt động' : 'Không hoạt động' }}</td>
                     <td>
-                        <a href="{{ route('admin_taikhoan.edit', $item->id) }}" class="btn btn-warning btn-sm">Sửa</a>
                         <form action="{{ route('admin_taikhoan.destroy', $item->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
