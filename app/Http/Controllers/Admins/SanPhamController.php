@@ -24,7 +24,7 @@ class SanPhamController extends Controller
         $this->danh_muc = new DanhMuc();
     }
 
-    public function index()
+    public function index(Request $request)
     {
 
         $listThuCung = $this->thu_cung->getListThuCung();
@@ -85,18 +85,18 @@ class SanPhamController extends Controller
      */
     public function update(SanPhamReQuest $request, string $id)
     {
-        if($request->isMethod('PUT')){
+        if ($request->isMethod('PUT')) {
             $params = $request->except('_token', '_method');
             $sanpham = $this->thu_cung->getDetailThuCung($id);
-            if($request->hasFile('hinh_anh')){
-                if($sanpham->hinh_anh){
+            if ($request->hasFile('hinh_anh')) {
+                if ($sanpham->hinh_anh) {
                     Storage::disk('public')->delete($sanpham->hinh_anh);
                 }
                 $params['hinh_anh'] = $request->file('hinh_anh')->store('uploads/sanpham', 'public');
             } else {
                 $params['hinh_anh'] = $sanpham->hinh_anh;
             }
-            $this->thu_cung->updateThuCung($id,$params);
+            $this->thu_cung->updateThuCung($id, $params);
             return redirect()->route('admin_sanpham.index')->with('success', 'Sửa sản phẩm thành công!');
         }
     }

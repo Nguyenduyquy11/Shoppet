@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admins;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admins\TaiKhoan;
+use Illuminate\Support\Facades\Storage;
 
 class TaiKhoanController extends Controller
 {
@@ -18,7 +19,8 @@ class TaiKhoanController extends Controller
      */
     public function index()
     {
-        $listTaiKhoan = $this->tai_khoan->getListTaiKhoan();
+        // $listTaiKhoan = $this->tai_khoan->getListTaiKhoan();
+        $listTaiKhoan = TaiKhoan::orderByDesc('id')->get();
         // dd($listTaiKhoan);
         $title = "Quản lý tài khoản";
         return view('admins.taikhoan.index', ['title' => $title, 'listTaiKhoan' => $listTaiKhoan]);
@@ -79,10 +81,17 @@ class TaiKhoanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        $taikhoan = $this->tai_khoan->getDetailTaiKhoan($id);
-        $this->tai_khoan->deleteTaiKhoan($taikhoan->id);
+        // $taikhoan = $this->tai_khoan->getDetailTaiKhoan($id);
+        // $this->tai_khoan->deleteTaiKhoan($taikhoan->id);
+        if ($request->isMethod('DELETE')) {
+            $taiKhoan = TaiKhoan::findOrFail($id);
+            $taiKhoan->delete();
+            if ($taiKhoan->anh_dai_dien && Storage::disk('public')->exists($taiKhoan->anh_dai_dien)) {
+                Storage::disk('public')->delete($taiKhoan->anh_dai_dien);
+            }
+        }
         return redirect()->route('admin_taikhoan.index')->with('success', 'Xóa tài khoản thành công');
     }
 }
