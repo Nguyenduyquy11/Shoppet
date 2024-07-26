@@ -57,7 +57,7 @@ class SanPhamController extends Controller
             $params['hinh_anh'] = $fileName;
             $this->thu_cung->createThuCung($params);
         }
-        return redirect()->route('admin_sanpham.index')->with('success', 'Thêm sản phẩm thành công!');
+        return redirect()->route('admin.sanpham.index')->with('success', 'Thêm sản phẩm thành công!');
     }
 
     /**
@@ -97,7 +97,7 @@ class SanPhamController extends Controller
                 $params['hinh_anh'] = $sanpham->hinh_anh;
             }
             $this->thu_cung->updateThuCung($id, $params);
-            return redirect()->route('admin_sanpham.index')->with('success', 'Sửa sản phẩm thành công!');
+            return redirect()->route('admin.sanpham.index')->with('success', 'Sửa sản phẩm thành công!');
         }
     }
 
@@ -108,6 +108,6 @@ class SanPhamController extends Controller
     {
         $thucung = $this->thu_cung->getDetailThuCung($id);
         $this->thu_cung->deleteThuCung($thucung->id);
-        return redirect()->route('admin_sanpham.index')->with('success', 'Xóa sản phẩm thành công!');
+        return redirect()->route('admin.sanpham.index')->with('success', 'Xóa sản phẩm thành công!');
     }
 }

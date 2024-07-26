@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h3 class="card-title">Thêm Thú Cưng</h3>
             </div>
-            <form action="{{ route('admin_sanpham.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.sanpham.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">

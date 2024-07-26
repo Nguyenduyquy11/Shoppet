@@ -42,7 +42,7 @@ class DanhMucController extends Controller
             $params = $request->except('_token');
             $this->danh_muc->CreateDanhMuc($params);
         }
-        return redirect()->route('admin_danhmuc.index')->with('success', 'Thêm mới danh mục thành công!');
+        return redirect()->route('admin.danhmuc.index')->with('success', 'Thêm mới danh mục thành công!');
     }
 
     /**
@@ -73,7 +73,7 @@ class DanhMucController extends Controller
             $params = $request->except('_token', '_method');
             // $danhmuc = $this->danh_muc->getDetailDanhMuc($id);
             $this->danh_muc->updateDanhMuc($id, $params);
-            return redirect()->route('admin_danhmuc.index')->with('success', 'Cập nhật danh mục thành công!');
+            return redirect()->route('admin.danhmuc.index')->with('success', 'Cập nhật danh mục thành công!');
         }
     }
 
@@ -84,6 +84,6 @@ class DanhMucController extends Controller
     {
         $danhmuc = $this->danh_muc->getDetailDanhMuc($id);
         $this->danh_muc->deleteDanhMuc($danhmuc->id);
-        return redirect()->route('admin_danhmuc.index')->with('success', 'Xóa danh mục thành công!');
+        return redirect()->route('admin.danhmuc.index')->with('success', 'Xóa danh mục thành công!');
     }
 }

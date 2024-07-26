@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h3 class="card-title">Sửa Thông Tin Thú Cưng</h3>
             </div>
-            <form action="{{ route('admin_sanpham.update', $thuCung->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.sanpham.update', $thuCung->id) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="card-body">

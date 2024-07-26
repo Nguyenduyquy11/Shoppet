@@ -12,7 +12,7 @@
     <div class="table-title bg-primary text-white p-3">
         <h4 class="mb-0">Danh Sách Thú Cưng</h4>
     </div>
-        <a href="{{ route('admin_sanpham.create') }}" class="btn btn-success ml-10 mt-3 mb-3 ">Thêm mới</a>
+        <a href="{{ route('admin.sanpham.create') }}" class="btn btn-success ml-10 mt-3 mb-3 ">Thêm mới</a>
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
@@ -45,8 +45,8 @@
                     <td>{{ $thuCung->mo_ta }}</td>
                     <td>{{ $thuCung->ten_danh_muc }}</td>
                     <td>
-                        <a href="{{ route('admin_sanpham.edit', $thuCung->id) }}" class="btn btn-warning btn-sm">Sửa</a>
-                        <form action="{{ route('admin_sanpham.destroy', $thuCung->id) }}" method="POST">
+                        <a href="{{ route('admin.sanpham.edit', $thuCung->id) }}" class="btn btn-warning btn-sm">Sửa</a>
+                        <form action="{{ route('admin.sanpham.destroy', $thuCung->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không')">

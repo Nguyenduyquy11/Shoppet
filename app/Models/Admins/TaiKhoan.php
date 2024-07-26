@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TaiKhoan extends Model
 {
+    const ROLE_ADMIN = 'Admin';
+    const ROLE_USER = 'User';
     use HasFactory;
     use SoftDeletes;
     protected $fillable = [

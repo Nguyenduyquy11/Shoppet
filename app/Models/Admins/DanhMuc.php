@@ -31,4 +31,9 @@ class DanhMuc extends Model
     {
         DB::table('danh_mucs')->where('id', $id)->delete();
     }
+    protected $table = 'danh_mucs';
+    protected $fillable = [
+        'ten_danh_muc',
+        'mo_ta',
+    ];
 }

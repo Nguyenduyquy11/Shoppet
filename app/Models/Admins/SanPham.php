@@ -36,4 +36,16 @@ class SanPham extends Model
     {
         DB::table('san_phams')->where('id', $id)->delete();
     }
+    protected $table = 'san_phams';
+    protected $fillable = [
+        'ten_san_pham',
+        'hinh_anh',
+        'so_luong',
+        'gia_san_pham',
+        'gia_khuyen_mai',
+        'ngay_nhap',
+        'mo_ta',
+        'gioi_tinh',
+        'danh_muc_id',
+    ];
 }

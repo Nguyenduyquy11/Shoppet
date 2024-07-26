@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Trang chủ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('assets/clients/css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
@@ -17,7 +17,7 @@
     <main>
         @yield('content')
     </main>
-    <footer>
+    <br> <br><footer>
         @include('clients.blocks.footer')
     </footer>
     <script src="{{ asset('assets/js/index.js') }}"></script>

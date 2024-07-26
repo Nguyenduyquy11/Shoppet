@@ -51,7 +51,7 @@ class TaiKhoanController extends Controller
             $params['anh_dai_dien'] = $fileName;
             $this->tai_khoan->createTaiKhoan($params);
         }
-        return redirect()->route('admin_taikhoan.index')->with('success', 'Thêm tài khoản thành công');
+        return redirect()->route('admin.taikhoan.index')->with('success', 'Thêm tài khoản thành công');
     }
 
     /**
@@ -92,6 +92,6 @@ class TaiKhoanController extends Controller
                 Storage::disk('public')->delete($taiKhoan->anh_dai_dien);
             }
         }
-        return redirect()->route('admin_taikhoan.index')->with('success', 'Xóa tài khoản thành công');
+        return redirect()->route('admin.taikhoan.index')->with('success', 'Xóa tài khoản thành công');
     }
 }

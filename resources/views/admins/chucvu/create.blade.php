@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h3 class="card-title">Thêm Chức Vụ</h3>
             </div>
-            <form action="{{ route('admin_chucvu.store') }}" method="POST">
+            <form action="{{ route('admin.chucvu.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">

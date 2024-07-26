@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h3 class="card-title">Thêm Danh Mục Thú Cưng</h3>
             </div>
-            <form action="{{ route('admin_danhmuc.store') }}" method="POST">
+            <form action="{{ route('admin.danhmuc.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">

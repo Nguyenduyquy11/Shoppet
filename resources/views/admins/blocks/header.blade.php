@@ -139,7 +139,7 @@
   </nav>
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/thucung" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="{{ asset('assets/admins/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Quay về trang client</span>
     </a>
@@ -183,25 +183,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin_sanpham" class="nav-link ">         
+                <a href="{{ route('admin.sanpham.index') }}" class="nav-link ">         
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin_danhmuc" class="nav-link">
+                <a href="{{ route('admin.danhmuc.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin_taikhoan" class="nav-link">
+                <a href="{{ route('admin.taikhoan.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tài khoản</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin_chucvu" class="nav-link">
+                <a href="{{ route('admin.chucvu.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Chức vụ</p>
                 </a>
