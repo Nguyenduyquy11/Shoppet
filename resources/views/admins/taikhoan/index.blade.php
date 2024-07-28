@@ -16,6 +16,7 @@
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
+                <th>Học thì ngu chơi game thì hack</th>
                 <th>STT</th>
                 <th>Ảnh đại diện</th>
                 <th>Họ tên</th>
