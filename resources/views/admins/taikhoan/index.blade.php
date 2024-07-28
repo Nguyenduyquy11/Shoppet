@@ -36,6 +36,11 @@
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->so_dien_thoai }}</td>
                     <td>{{ $item->chucVu->ten_chuc_vu }}</td>
+                    <td>{{ $item->gioi_tinh == 0 ? 'Nữ' : 'Nam' }}</td>
+                    <td>{{ $item->dia_chi }}</td>
+                    <td>{{ $item->ngay_sinh }}</td>
+                    <td>{{ $item->mat_khau }}</td>
+                    <td>{{ $item->ten_chuc_vu }}</td>                    
                     <td>{{ $item->status == 0 ? 'Đang hoạt động' : 'Không hoạt động' }}</td>
                     <td>
                         <form action="{{ route('admin.taikhoan.destroy', $item->id) }}" method="POST">
