@@ -4,23 +4,18 @@ namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admins\TaiKhoan;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class TaiKhoanController extends Controller
 {
-    protected $tai_khoan;
-    public function __construct()
-    {
-        $this->tai_khoan = new TaiKhoan();
-    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         // $listTaiKhoan = $this->tai_khoan->getListTaiKhoan();
-        $listTaiKhoan = TaiKhoan::orderByDesc('id')->get();
+        $listTaiKhoan = User::orderByDesc('id')->get();
         // dd($listTaiKhoan);
         $title = "Quản lý tài khoản";
         return view('admins.taikhoan.index', ['title' => $title, 'listTaiKhoan' => $listTaiKhoan]);
@@ -49,7 +44,7 @@ class TaiKhoanController extends Controller
         if($request -> isMethod('POST')){
             $params = $request -> except('_token');
             $params['anh_dai_dien'] = $fileName;
-            $this->tai_khoan->createTaiKhoan($params);
+            User::create($params);
         }
         return redirect()->route('admin.taikhoan.index')->with('success', 'Thêm tài khoản thành công');
     }
@@ -86,7 +81,7 @@ class TaiKhoanController extends Controller
         // $taikhoan = $this->tai_khoan->getDetailTaiKhoan($id);
         // $this->tai_khoan->deleteTaiKhoan($taikhoan->id);
         if ($request->isMethod('DELETE')) {
-            $taiKhoan = TaiKhoan::findOrFail($id);
+            $taiKhoan = User::findOrFail($id);
             $taiKhoan->delete();
             if ($taiKhoan->anh_dai_dien && Storage::disk('public')->exists($taiKhoan->anh_dai_dien)) {
                 Storage::disk('public')->delete($taiKhoan->anh_dai_dien);

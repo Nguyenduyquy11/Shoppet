@@ -2,6 +2,7 @@
 
 namespace App\Models\Admins;
 
+use App\Models\BinhLuan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -48,4 +49,7 @@ class SanPham extends Model
         'gioi_tinh',
         'danh_muc_id',
     ];
+    public function binhLuan(){
+        return $this->hasMany(BinhLuan::class, 'san_pham_id');
+    }
 }

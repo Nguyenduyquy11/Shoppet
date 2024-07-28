@@ -21,10 +21,6 @@
                 <th>Họ tên</th>
                 <th>Email</th>
                 <th>Số điện thoại</th>
-                <th>Giới tính</th>
-                <th>Địa chỉ</th>
-                <th>Ngày sinh</th>
-                <th>Mật khẩu</th>
                 <th>Chức vụ</th>
                 <th>Trạng thái</th>
                 <th>Thao tác</th>
@@ -39,11 +35,7 @@
                     <td>{{ $item->ho_ten }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->so_dien_thoai }}</td>
-                    <td>{{ $item->gioi_tinh == 0 ? 'Nữ' : 'Nam'  }}</td>
-                    <td>{{ $item->dia_chi }}</td>
-                    <td>{{ $item->ngay_sinh }}</td>
-                    <td>{{ $item->mat_khau }}</td>
-                    <td>{{ $item->ten_chuc_vu }}</td>
+                    <td>{{ $item->chucVu->ten_chuc_vu }}</td>
                     <td>{{ $item->status == 0 ? 'Đang hoạt động' : 'Không hoạt động' }}</td>
                     <td>
                         <form action="{{ route('admin.taikhoan.destroy', $item->id) }}" method="POST">

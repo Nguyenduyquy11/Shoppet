@@ -34,6 +34,7 @@ class DanhMuc extends Model
     protected $table = 'danh_mucs';
     protected $fillable = [
         'ten_danh_muc',
+        'anh_danh_muc',
         'mo_ta',
     ];
 }

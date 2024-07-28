@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admins\DanhMuc;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DanhMucRequest;
+use Illuminate\Support\Facades\Storage;
 
 class DanhMucController extends Controller
 {
@@ -40,6 +41,11 @@ class DanhMucController extends Controller
     {
         if ($request->isMethod('POST')) {
             $params = $request->except('_token');
+            if($request->hasFile('anh_danh_muc')){
+                $params['anh_danh_muc'] = $request->file('anh_danh_muc')->store('uploads/danhmuc', 'public');
+            }else{
+                $params['anh_danh_muc'] = null;
+            }
             $this->danh_muc->CreateDanhMuc($params);
         }
         return redirect()->route('admin.danhmuc.index')->with('success', 'Thêm mới danh mục thành công!');
@@ -71,7 +77,15 @@ class DanhMucController extends Controller
     {
         if ($request->isMethod('PUT')) {
             $params = $request->except('_token', '_method');
-            // $danhmuc = $this->danh_muc->getDetailDanhMuc($id);
+            $danhmuc = $this->danh_muc->getDetailDanhMuc($id);
+            if($request->hasFile('anh_danh_muc')){
+                if($danhmuc->anh_danh_muc){
+                    Storage::disk('public')->delete($danhmuc->anh_danh_muc);
+                }
+                $params['anh_danh_muc'] = $request->file('anh_danh_muc')->store('uploads/danhmuc', 'public');
+            }else{
+                $params['anh_danh_muc'] = $danhmuc->anh_danh_muc;
+            }
             $this->danh_muc->updateDanhMuc($id, $params);
             return redirect()->route('admin.danhmuc.index')->with('success', 'Cập nhật danh mục thành công!');
         }

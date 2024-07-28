@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h3 class="card-title">Thêm Danh Mục Thú Cưng</h3>
             </div>
-            <form action="{{ route('admin.danhmuc.store') }}" method="POST">
+            <form action="{{ route('admin.danhmuc.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -20,6 +20,10 @@
                         @error('ten_danh_muc')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ảnh danh mục thú cưng</label>
+                        <input type="file" class="form-control" id="exampleInputEmail1" name="anh_danh_muc">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả </label>

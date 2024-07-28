@@ -206,6 +206,18 @@
                   <p>Chức vụ</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.lienhe.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liên hệ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.binhluan.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bình luận</p>
+                </a>
+              </li>
             </ul>
           </li>
 

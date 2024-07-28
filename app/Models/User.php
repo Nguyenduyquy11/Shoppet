@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\Admins\ChucVu;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Notifiable;
@@ -44,10 +46,17 @@ class User extends Authenticatable
     {
         DB::table('tai_khoans')->where('id', $id)->delete();
     }
+    // public function binhLuan(){
+    //     return $this->hasMany(BinhLuan::class);
+    // }
     protected $fillable = [
+        'anh_dai_dien',
         'ho_ten',
         'email',
         'so_dien_thoai',
+        'gioi_tinh',
+        'dia_chi',
+        'ngay_sinh',
         'password',
     ];
 
@@ -70,4 +79,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function chucVu(){
+        return $this->belongsTo(ChucVu::class);
+    }
 }

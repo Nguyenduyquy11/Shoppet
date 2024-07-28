@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h3 class="card-title">Sửa Danh Mục Thú Cưng</h3>
             </div>
-            <form action="{{ route('admin.danhmuc.update', $danhMuc->id) }}" method="POST">
+            <form action="{{ route('admin.danhmuc.update', $danhMuc->id) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="card-body">
@@ -22,6 +22,11 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ảnh danh mục thú cưng</label>
+                        <input type="file" class="form-control" id="exampleInputEmail1" name="anh_danh_muc">
+                    </div>
+                    <img src="{{ Storage::url($danhMuc->anh_danh_muc) }}" width="100px" height="100px" alt="">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả</label>
                         <textarea name="mo_ta" id="exampleInputEmail1" class="form-control" cols="30" rows="10">{{ $danhMuc->mo_ta }}</textarea>

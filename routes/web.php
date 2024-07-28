@@ -4,11 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admins\Admincontroller;
 use App\Http\Controllers\Admins\ChucVuController;
+use App\Http\Controllers\Admins\LienHeController;
 use App\Http\Controllers\admins\DanhMucController;
 use App\Http\Controllers\Admins\SanPhamController;
 use App\Http\Controllers\Clients\ClientController;
+use App\Http\Controllers\Admins\BinhLuanController;
 use App\Http\Controllers\Admins\TaiKhoanController;
+use App\Http\Controllers\Clients\CartClientController;
+use App\Http\Controllers\Clients\LienHeClientController;
 use App\Http\Controllers\Clients\ClientSanPhamController;
+use App\Http\Controllers\Clients\NguoiDungClientController;
 
 // use App\Http\Controllers\Admins\ThuCungController;
 
@@ -76,12 +81,37 @@ Route::middleware('auth', 'auth.admin')->prefix('admin')->as('admin.')->group(fu
         Route::put('{id}/update', [ChucVuController::class, 'update'])->name('update');
         Route::delete('{id}/destroy', [ChucVuController::class, 'destroy'])->name('destroy');
     });
+    Route::prefix('lienhe')->as('lienhe.')->group(function(){
+        Route::get('/list', [LienHeController::class, 'index'])->name('index');
+        // Route::get('/create', [LienHeController::class, 'create'])->name('create');
+        // Route::post('/store', [LienHeController::class, 'store'])->name('store');
+        // Route::get('/show/{id}', [LienHeController::class, 'show'])->name('show');
+        Route::get('edit/{id}', [LienHeController::class, 'edit'])->name('edit');
+        Route::put('{id}/update', [LienHeController::class, 'update'])->name('update');
+    });
+    Route::prefix('binhluan')->as('binhluan.')->group(function(){
+        Route::get('/list', [BinhLuanController::class, 'index'])->name('index');
+        Route::delete('{id}/destroy', [BinhLuanController::class, 'destroy'])->name('destroy');
+ 
+    });
 });
 
 //Client
 Route::get('/', [ClientSanPhamController::class, 'SanPhamHome'])->name('/');
-// Route::get('/', [ClientSanPhamController::class, 'DanhMucHome'])->name('/');
-Route::get('/lienhe', [ClientSanPhamController::class, 'lienHe'])->name('/lienhe');
-// Route::get('sanphamDM', [ClientSanPhamController::class, 'sanPhamDanhMuc'])->name('sanphamDM');
+Route::get('/timkiem', [ClientSanPhamController::class, 'timKiemSanPham'])->name('/timkiem');
+Route::get('sanphamdanhmuc/{id}', [ClientSanPhamController::class, 'sanPhamDanhMuc'])->name('sanphamdanhmuc');
 Route::get('chitiet/{id}', [ClientSanPhamController::class, 'chiTietSanPham'])->name('chitiet');
+Route::post('binhluan', [ClientSanPhamController::class, 'binhLuan'])->name('binhluan');
+//Cart
+Route::get('/giohang', [CartClientController::class, 'listCart'])->name('giohang');
+Route::post('/themvaogiohang', [CartClientController::class, 'addToCart'])->name('themvaogiohang');
+Route::delete('/xoacart/{id}', [CartClientController::class, 'deleteCart'])->name('xoacart');
+//Liên hệ
+Route::get('/lienhe', [LienHeClientController::class, 'lienHe'])->name('/lienhe');
+Route::post('/guilienhe', [LienHeClientController::class, 'guiLienHe'])->name('addlienhe');
+//Người dùng
+Route::get('/nguoidung/{id}', [NguoiDungClientController::class, 'formDeTailUser'])->name('/nguoidung');
+Route::get('/formcapnhat/{id}', [NguoiDungClientController::class, 'formUpdateUser'])->name('/formcapnhat');
+Route::put('/capnhat/user/{id}', [NguoiDungClientController::class, 'updateUser'])->name('/capnhat.nguoidung');
+
 
