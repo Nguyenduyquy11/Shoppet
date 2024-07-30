@@ -55,12 +55,18 @@
                             <strong>Phí giao hàng:</strong>
                             @if (!empty($cart))
                                 <strong>{{ number_format($shipping, 0, '', '.') }} đ</strong>
+                            @else
+                                <strong>0 đ</strong>
                             @endif
                         </li>
                         <hr>
                         <li class="d-flex justify-content-between mb-3">
                             <strong>Tổng cộng:</strong>
-                            <strong class="text-danger">{{ number_format($total, 0, '', '.') }} đ</strong>
+                            @if (!empty($cart))
+                                <strong class="text-danger">{{ number_format($total, 0, '', '.') }} đ</strong>
+                            @else
+                                <strong>0 đ</strong>
+                            @endif
                         </li>
                         <a href="#" class="btn btn-outline-primary w-100">Tiến hành thanh toán</a>
                     </ul>

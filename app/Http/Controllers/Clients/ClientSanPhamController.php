@@ -17,7 +17,7 @@ class ClientSanPhamController extends Controller
         $danhMuc = DanhMuc::query()->get();
         $sanPhamYeuThich = SanPham::orderBy('luot_xem', 'desc')->take(4)->get();
         $sanPhamMoi = SanPham::orderBy('id', 'desc')->take(4)->get();
-        $listSanPham = SanPham::orderBy('id', 'asc')->paginate(12);
+        $listSanPham = SanPham::orderBy('id', 'asc')->paginate(8);
         // $sanPhamDeTail = SanPham::findOrFail($id);
         return view('clients.thucung.index',compact('title', 'listSanPham', 'danhMuc','sanPhamMoi','sanPhamYeuThich'));
     }
