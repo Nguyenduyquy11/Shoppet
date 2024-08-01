@@ -28,10 +28,10 @@
                     <td> {{ $item->ten_chuc_vu }} </td>
                     <td>
                         <a href="{{ route('admin.chucvu.edit', $item->id) }}" class="btn btn-warning btn-sm">Sửa</a>
-                        <form action="{{ route('admin.chucvu.destroy', $item->id) }}" method="POST">
+                        <form action="{{ route('admin.chucvu.destroy', $item->id) }}" method="POST" class="d-inline">
                             @method('DELETE')
                             @csrf
-                            <br><button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không?')">
+                            <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không?')">
                                 Xóa
                             </button>
                         </form>

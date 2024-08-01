@@ -30,7 +30,7 @@
                     <td>{{ $item->mo_ta }}</td>
                     <td>
                         <a href="{{ route('admin.danhmuc.edit', $item->id) }}" class="btn btn-warning btn-sm">Sửa</a>
-                        <form action="{{ route('admin.danhmuc.destroy', $item->id) }}" method="POST">
+                        <form action="{{ route('admin.danhmuc.destroy', $item->id) }}" method="POST" class="d-inline">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không?')">

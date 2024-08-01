@@ -106,3 +106,21 @@ body {
     margin: 5px;
     border-radius: 20px;
 }
+.order-form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #0056b3;
+}

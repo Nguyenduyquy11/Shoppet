@@ -58,6 +58,9 @@
                                 <li><a class="dropdown-item" href="{{ route('/nguoidung', Auth::user()->id) }}">
                                     <button class="btn bg-white">Hồ sơ</button>
                                 </a></li>
+                                <li><a class="dropdown-item" href="{{ route('donhang.index') }}">
+                                    <button class="btn bg-white">Đơn hàng của tôi</button>
+                                </a></li>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <li><a class="dropdown-item" href="">

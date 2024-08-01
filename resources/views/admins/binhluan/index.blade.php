@@ -33,7 +33,7 @@
                     <td>{{ $item->created_at}}</td>
                     <td>
                         <form action="{{ route('admin.binhluan.destroy', $item->id) }}" method="POST" 
-                            onsubmit="return confirm('Bạn có muốn xóa không')">
+                            onsubmit="return confirm('Bạn có muốn xóa không')" class="d-inline">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-outline-danger">Xóa</button>

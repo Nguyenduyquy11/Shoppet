@@ -5,9 +5,9 @@
 @section('content')
     <div class="container my-5">
         <h1 class="mb-4">Giỏ Hàng</h1>
-        @if (session('msg'))
+        @if (session('error'))
             <div class="alert alert-danger">
-                {{ session('msg') }}
+                {{ session('error') }}
             </div>
         @endif
         <div class="row">
@@ -68,7 +68,7 @@
                                 <strong>0 đ</strong>
                             @endif
                         </li>
-                        <a href="#" class="btn btn-outline-primary w-100">Tiến hành thanh toán</a>
+                        <a href="{{ route('donhang.create') }}" class="btn btn-outline-primary w-100">Tiến hành thanh toán</a>
                     </ul>
                 </div>
             </div>

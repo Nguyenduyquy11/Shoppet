@@ -9,11 +9,13 @@ use App\Http\Controllers\admins\DanhMucController;
 use App\Http\Controllers\Admins\SanPhamController;
 use App\Http\Controllers\Clients\ClientController;
 use App\Http\Controllers\Admins\BinhLuanController;
+use App\Http\Controllers\Admins\DonHangController;
 use App\Http\Controllers\Admins\TaiKhoanController;
 use App\Http\Controllers\Clients\CartClientController;
 use App\Http\Controllers\Clients\LienHeClientController;
 use App\Http\Controllers\Clients\ClientSanPhamController;
 use App\Http\Controllers\Clients\NguoiDungClientController;
+use App\Http\Controllers\Clients\OrderController;
 
 // use App\Http\Controllers\Admins\ThuCungController;
 
@@ -36,6 +38,14 @@ Route::post('login', [AuthController::class, 'Login'])->name('login');
 Route::get('register', [AuthController::class, 'showFormRegister']);
 Route::post('register', [AuthController::class, 'register'])->name('register');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->prefix('donhang')->as('donhang.')->group(function(){
+    Route::get('/list', [OrderController::class, 'index'])->name('index');
+    Route::get('/create', [OrderController::class, 'create'])->name('create');
+    Route::post('/store', [OrderController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [OrderController::class, 'show'])->name('show');
+    Route::put('{id}/update', [OrderController::class, 'update'])->name('update');
+});
 
 //Admins
 Route::middleware('auth', 'auth.admin')->prefix('admin')->as('admin.')->group(function () {
@@ -83,9 +93,6 @@ Route::middleware('auth', 'auth.admin')->prefix('admin')->as('admin.')->group(fu
     });
     Route::prefix('lienhe')->as('lienhe.')->group(function(){
         Route::get('/list', [LienHeController::class, 'index'])->name('index');
-        // Route::get('/create', [LienHeController::class, 'create'])->name('create');
-        // Route::post('/store', [LienHeController::class, 'store'])->name('store');
-        // Route::get('/show/{id}', [LienHeController::class, 'show'])->name('show');
         Route::get('edit/{id}', [LienHeController::class, 'edit'])->name('edit');
         Route::put('{id}/update', [LienHeController::class, 'update'])->name('update');
     });
@@ -93,6 +100,12 @@ Route::middleware('auth', 'auth.admin')->prefix('admin')->as('admin.')->group(fu
         Route::get('/list', [BinhLuanController::class, 'index'])->name('index');
         Route::delete('{id}/destroy', [BinhLuanController::class, 'destroy'])->name('destroy');
  
+    });
+    Route::prefix('donhang')->as('donhang.')->group(function(){
+        Route::get('/list', [DonHangController::class, 'index'])->name('index');
+        Route::get('/show/{id}', [DonHangController::class, 'show'])->name('show');
+        Route::put('{id}/update', [DonHangController::class, 'update'])->name('update');
+        Route::delete('{id}/destroy', [DonHangController::class, 'destroy'])->name('destroy');
     });
 });
 

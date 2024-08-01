@@ -37,7 +37,7 @@
 
 
 
-
+    @yield('js')
 </body>
 
 <footer>

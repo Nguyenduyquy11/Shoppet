@@ -82,4 +82,7 @@ class User extends Authenticatable
     public function chucVu(){
         return $this->belongsTo(ChucVu::class);
     }
+    public function donHang(){
+        return $this->hasMany(DonHang::class);
+    }
 }
