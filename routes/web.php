@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admins\AdminBaiVietController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admins\Admincontroller;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Clients\ClientController;
 use App\Http\Controllers\Admins\BinhLuanController;
 use App\Http\Controllers\Admins\DonHangController;
 use App\Http\Controllers\Admins\TaiKhoanController;
+use App\Http\Controllers\Clients\BaiVietController;
 use App\Http\Controllers\Clients\CartClientController;
 use App\Http\Controllers\Clients\LienHeClientController;
 use App\Http\Controllers\Clients\ClientSanPhamController;
@@ -107,6 +109,15 @@ Route::middleware('auth', 'auth.admin')->prefix('admin')->as('admin.')->group(fu
         Route::put('{id}/update', [DonHangController::class, 'update'])->name('update');
         Route::delete('{id}/destroy', [DonHangController::class, 'destroy'])->name('destroy');
     });
+    Route::prefix('baiviet')->as('baiviet.')->group(function(){
+        Route::get('/list', [AdminBaiVietController::class, 'index'])->name('index');
+        Route::get('/create', [AdminBaiVietController::class, 'create'])->name('create');
+        Route::post('/store', [AdminBaiVietController::class, 'store'])->name('store');
+        Route::get('/show/{id}', [AdminBaiVietController::class, 'show'])->name('show');
+        Route::get('{id}/edit', [AdminBaiVietController::class, 'edit'])->name('edit');
+        Route::put('{id}/update', [AdminBaiVietController::class, 'update'])->name('update');
+        Route::delete('{id}/destroy', [AdminBaiVietController::class, 'destroy'])->name('destroy');
+    });
 });
 
 //Client
@@ -126,5 +137,9 @@ Route::post('/guilienhe', [LienHeClientController::class, 'guiLienHe'])->name('a
 Route::get('/nguoidung/{id}', [NguoiDungClientController::class, 'formDeTailUser'])->name('/nguoidung');
 Route::get('/formcapnhat/{id}', [NguoiDungClientController::class, 'formUpdateUser'])->name('/formcapnhat');
 Route::put('/capnhat/user/{id}', [NguoiDungClientController::class, 'updateUser'])->name('/capnhat.nguoidung');
+//Bài viết
+Route::get('/baiviet', [BaiVietController::class, 'baiViet'])->name('/baiviet');
+Route::get('/baiviet/{id}', [BaiVietController::class, 'chiTietBaiViet'])->name('/chitietbaiviet');
+
 
 

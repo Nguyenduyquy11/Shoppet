@@ -11,6 +11,9 @@
                     <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/baiviet">Bài viết</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="#">Đồ ăn thú cưng</a>
                 </li>
                 <li class="nav-item dropdown">
