@@ -52,12 +52,6 @@
                                 </tr>                                
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th colspan="4" class="text-right">Tổng Cộng:</th>
-                                <th>500,000 VNĐ</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
